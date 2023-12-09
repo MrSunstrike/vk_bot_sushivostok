@@ -9,7 +9,7 @@ load_dotenv()
 TOKEN = getenv("TOKEN")
 
 win_words = ["выйгр", "выигра", "победил", "приз"]
-ny_words = ["предзаказ", "выигра"]
+ny_words = ["предзаказ", "новый год"]
 
 
 def get_answer(message):

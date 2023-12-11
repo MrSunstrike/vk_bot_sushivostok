@@ -53,14 +53,14 @@ for event in longpoll.listen():
 
         # Получаем ответ
         response = get_answer(message_text)
+        if response:
+            # Формируем сообщение с использованием имени отправителя
+            message = f"{first_name}, приветствуем👋\n{response}"
 
-        # Формируем сообщение с использованием имени отправителя
-        message = f"{first_name}, приветствуем👋\n{response}"
-
-        # Отправляем ответ с случайным идентификатором
-        vk.messages.send(
-            user_id=event.user_id,
-            message=message,
-            random_id=random.randint(1, 1000)  # Добавляем random_id
-        )
+            # Отправляем ответ с случайным идентификатором
+            vk.messages.send(
+                user_id=event.user_id,
+                message=message,
+                random_id=random.randint(1, 1000)  # Добавляем random_id
+            )
 
